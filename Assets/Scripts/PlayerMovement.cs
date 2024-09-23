@@ -16,47 +16,22 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButton(0))
-        //{
-        //    Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //    if (touchPos.x < 1)
-        //    {
-        //        playerRb.AddForce(Vector2.left * speed);
-        //    }
-        //    else if (touchPos.x > 1)    
-        //    {
-        //        playerRb.AddForce(Vector2.right * speed);
-        //    }
-        //}
-        //else
-        //{
-        //    playerRb.velocity = Vector2.zero;
-        //}
-        MoveOnTouch();
-
-    }
-
-    private void MoveOnTouch()
-    {
-        if (Input.touchCount > 0)
+        if (Input.GetMouseButton(0))
         {
-            Vector2 pos = Input.GetTouch(0).position;
-            float middle = Screen.width / 2;
+            Vector3 touchPos = Input.mousePosition;
 
-            if (pos.x < middle)
+            if (touchPos.x < 1)
             {
-                MoveLeft = true;
+                playerRb.AddForce(Vector2.left * speed);
             }
-            else if (pos.x > middle)
+            else if (touchPos.x > 1)
             {
-                MoveRight = true;
+                playerRb.AddForce(Vector2.right * speed);
             }
         }
         else
         {
-            MoveLeft = false;
-            MoveRight = false;
+            playerRb.velocity = Vector2.zero;
         }
     }
 }
