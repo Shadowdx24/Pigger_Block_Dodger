@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
     [SerializeField] private Rigidbody2D playerRb;
-    private bool MoveLeft;
-    private bool MoveRight;
+    [SerializeField] private GameObject gameOverObj;
+    [SerializeField] private GameObject gamePauseObj;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,49 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRb.velocity = Vector2.zero;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("block"))
+        {
+            Debug.Log("Game Over");
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        gameOverObj.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void GamePause()
+    {
+        gamePauseObj.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void GameRestart()
+    {
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+        gameOverObj.SetActive(false); 
+    }
+    public void GameResume()
+    {
+        gamePauseObj.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void GameHome()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+    }
+
+    public void GameQuit()
+    {
+        Application.Quit();
     }
 }
