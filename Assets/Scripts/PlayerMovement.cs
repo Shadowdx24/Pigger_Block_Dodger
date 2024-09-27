@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private GameObject gameOverObj;
     [SerializeField] private GameObject gamePauseObj;
+    [SerializeField] private TextMeshProUGUI ScoreText1;
 
     // Start is called before the first frame update
     void Start()
