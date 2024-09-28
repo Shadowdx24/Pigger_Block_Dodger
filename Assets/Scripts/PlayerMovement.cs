@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private GameObject gameOverObj;
     [SerializeField] private GameObject gamePauseObj;
-    [SerializeField] private TextMeshProUGUI ScoreText1;
+    //[SerializeField] private TextMeshProUGUI ScoreText1;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameOverObj.SetActive(true);
         Time.timeScale = 0f;
+       // GameManager.instance.FinalScore();
     }
 
     public void GamePause()

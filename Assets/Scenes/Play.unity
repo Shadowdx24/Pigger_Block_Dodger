@@ -171,8 +171,8 @@ MonoBehaviour:
   maxX: 2.7
   spawnPoint: {fileID: 2050291255}
   spawnRate: 1
-  tapText: {fileID: 0}
   scoreText: {fileID: 1868918581}
+  ScoreText1: {fileID: 472927329}
 --- !u!1 &152797484 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5292806727988420825, guid: edb5533a7a8dc8d43afc38b6725cf69d, type: 3}
@@ -323,6 +323,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 990595930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &472927329 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9075142526025853928, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+  m_PrefabInstance: {fileID: 2256683258061951412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,10 +889,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1128810480}
+    - target: {fileID: 6980604961861581463, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameRestart
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980604961861581463, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7106182626948512288, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1128810480}
+    - target: {fileID: 7106182626948512288, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7106182626948512288, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8375189145081241125, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -966,6 +993,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1128810480}
+    - target: {fileID: 8868020962387410572, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868020962387410572, guid: 1e6d82df30e66d64296d725bfdfb0f03, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

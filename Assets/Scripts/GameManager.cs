@@ -8,9 +8,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float spawnRate;
     private bool gameStated = false;
-    public GameObject tapText;
     public TextMeshProUGUI scoreText;
-    public int score = 0;
+    //[SerializeField] private TextMeshProUGUI ScoreText1;
+    private int score = 0;
+
+    public static GameManager instance;
 
     // Update is called once per frame
     void Update()
@@ -20,8 +22,6 @@ public class GameManager : MonoBehaviour
             StartSpawning();
 
             gameStated = true;
-
-            tapText.SetActive(false);
         }
         
     }
@@ -40,5 +40,8 @@ public class GameManager : MonoBehaviour
         scoreText.text = " " + score;
     }
 
-   
+    //public void FinalScore()
+    //{
+    //    ScoreText1.text = "Score:" + score;
+    //}
 }
