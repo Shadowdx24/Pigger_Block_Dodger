@@ -22,11 +22,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 touchPos = Input.mousePosition;
 
-            if (touchPos.x < 1)
+            if (touchPos.x < 0)
             {
                 playerRb.AddForce(Vector2.left * speed);
             }
-            else if (touchPos.x > 1)
+            else 
             {
                 playerRb.AddForce(Vector2.right * speed);
             }
