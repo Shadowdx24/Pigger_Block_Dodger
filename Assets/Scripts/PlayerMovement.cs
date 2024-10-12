@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRb;
     [SerializeField] private GameObject gameOverObj;
     [SerializeField] private GameObject gamePauseObj;
+    private bool newTap;
+    private Vector3 TapPos = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +24,45 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 touchPos = Input.mousePosition;
 
-            if (touchPos.x < 0)
+            if (newTap)
+            {
+                TapPos = touchPos;
+            }
+            float d = touchPos.x - TapPos.x;
+            
+            if (d < 0)
             {
                 playerRb.AddForce(Vector2.left * speed);
             }
-            else 
+            else
             {
                 playerRb.AddForce(Vector2.right * speed);
             }
+
+            TapPos = touchPos;
+
+            //if (touchPos.x < 0)
+            //{
+            //    playerRb.AddForce(Vector2.left * speed);
+            //}
+            //else 
+            //{
+            //    playerRb.AddForce(Vector2.right * speed);
+            //}
+
+            newTap = false;
         }
-        else
+
+        //else
+        //{
+        //    playerRb.velocity = Vector2.zero;
+        //}
+
+        if (Input.GetMouseButtonUp(0))
         {
-            playerRb.velocity = Vector2.zero;
+            newTap = true;
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
