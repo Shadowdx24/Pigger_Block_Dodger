@@ -1103,6 +1103,10 @@ PrefabInstance:
       propertyPath: gamePauseObj
       value: 
       objectReference: {fileID: 152797484}
+    - target: {fileID: 8537527458322832854, guid: ffabdc32b345b6c4c8ed0345bee12188, type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
